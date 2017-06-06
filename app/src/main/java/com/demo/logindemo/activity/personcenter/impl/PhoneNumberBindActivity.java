@@ -13,6 +13,8 @@ public class PhoneNumberBindActivity extends BaseActivity implements IPhoneNumbe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_number_bind);
-
+        /**
+         *
+         */
     }
 }
