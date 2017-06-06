@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- 设置按钮的圆角半径 -->
-    <corners android:radius="4dp" />
+    <corners android:radius="10dp" />
 
     <!-- 设置图形渐变颜色 -->
     <gradient
@@ -9,7 +9,7 @@
         android:startColor="#ff0000" />
 
     <size
-        android:width="50dp"
-        android:height="21dp" />
+        android:width="@dimen/dp_70"
+        android:height="@dimen/dp_20" />
 
 </shape>
