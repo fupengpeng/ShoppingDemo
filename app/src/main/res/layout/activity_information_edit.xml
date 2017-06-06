@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.demo.logindemo.activity.personcenter.impl.InformationEditActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp" />
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="资料编辑"
+                android:layout_width="match_parent"
+                android:layout_height="45dp" />
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <TextView
+            android:gravity="center"
+            android:text="请选择修改内容"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_35" />
+
+        <!--资料完善-->
+        <LinearLayout
+            android:id="@+id/ll_activity_information_edit_data"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50">
+            <TextView
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="资料完善"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:gravity="center"
+                android:textColor="@color/background_red"
+                android:text="送100积分"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <ImageView
+                android:src="@drawable/ic_chevron_right_black_24dp"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <!--收货地址-->
+        <LinearLayout
+            android:id="@+id/ll_activity_information_edit_address"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50">
+            <TextView
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="收货地址"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:src="@drawable/ic_chevron_right_black_24dp"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <!--修改头像-->
+        <LinearLayout
+            android:id="@+id/ll_activity_information_edit_pic"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50">
+            <TextView
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="修改头像"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:src="@drawable/ic_chevron_right_black_24dp"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <!--修改密码-->
+        <LinearLayout
+            android:id="@+id/ll_activity_information_edit_password"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50">
+            <TextView
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="修改密码"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:src="@drawable/ic_chevron_right_black_24dp"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

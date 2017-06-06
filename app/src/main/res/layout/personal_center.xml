@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--个人中心，带图片栏-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_100">
+        <ImageView
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="match_parent" />
+        <LinearLayout
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="姓名"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="绑定手机号"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="收货地址"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="match_parent">
+            <Button
+                android:layout_marginTop="@dimen/dp_40"
+                android:layout_weight="0.7"
+                android:text="普通会员"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:gravity="center"
+                android:layout_weight="0.3"
+                android:text="0个成长值"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--积分，账户余额-->
+    <LinearLayout
+        android:layout_margin="@dimen/dp_10"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_80">
+        <LinearLayout
+            android:layout_weight="0.45"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:background="#5858ff"
+                android:layout_gravity="center"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30" />
+            <LinearLayout
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:text="100"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_weight="0.5"
+                    android:text="可用积分"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30" />
+        </LinearLayout>
+        <View
+            android:background="#ff5555"
+            android:layout_width="@dimen/dp_2"
+            android:layout_height="match_parent"/>
+        <LinearLayout
+            android:layout_weight="0.45"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:background="#5858ff"
+                android:layout_gravity="center"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30" />
+            <LinearLayout
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:text="100"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_weight="0.5"
+                    android:text="可用积分"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30" />
+        </LinearLayout>
+        <Button
+            android:layout_gravity="center"
+            android:layout_weight="0.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <!--普通订单-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40">
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="match_parent" />
+        <TextView
+            android:gravity="center_vertical"
+            android:text="普通订单"
+            android:layout_weight="0.6"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="查看全部订单"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <!--订单状态-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:layout_margin="@dimen/dp_10"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_5"
+                android:text="待付款" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_5"
+                android:text="待付款" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_5"
+                android:text="待付款" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_5"
+                android:text="待付款" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="@dimen/dp_35"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_5"
+                android:text="待付款" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--我的购物车-->
+    <LinearLayout
+        android:layout_margin="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50">
+        <ImageView
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="我的购物车"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:gravity="center"
+            android:text="100"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <!--我的优惠券-->
+    <LinearLayout
+        android:layout_margin="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50">
+        <ImageView
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="我的优惠券"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <!--我的砍价-->
+    <LinearLayout
+        android:layout_margin="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50">
+        <ImageView
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="我的购物车"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <!--拼团订单-->
+    <LinearLayout
+        android:layout_margin="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50">
+        <ImageView
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="拼团订单"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <!--中奖纪录-->
+    <LinearLayout
+        android:layout_margin="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50">
+        <ImageView
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="中奖纪录"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <!--积分商城-->
+    <LinearLayout
+        android:layout_margin="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50">
+        <ImageView
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="积分商城"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</LinearLayout>
