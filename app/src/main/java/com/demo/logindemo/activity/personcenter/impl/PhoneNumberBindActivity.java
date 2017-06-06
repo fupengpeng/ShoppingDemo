@@ -14,9 +14,5 @@ public class PhoneNumberBindActivity extends BaseActivity implements IPhoneNumbe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_number_bind);
 
-
-        /**
-         * shenmeqingkuang
-         */
     }
 }
