@@ -28,15 +28,17 @@
             android:name=".activity.other.impl.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".activity.personcenter.impl.RegisterActivity" />
-        <activity android:name=".activity.personcenter.impl.PersonActivity" />
-        <activity android:name=".activity.personcenter.impl.InformationEditActivity" />
-        <activity android:name=".activity.personcenter.impl.DataActivity" />
-        <activity android:name=".activity.personcenter.impl.AddressEditActivity" >
+        <activity android:name=".activity.personcenter.impl.PersonActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activity.personcenter.impl.InformationEditActivity" />
+        <activity android:name=".activity.personcenter.impl.DataActivity" />
+        <activity android:name=".activity.personcenter.impl.AddressEditActivity" >
+
         </activity>
         <activity android:name=".activity.personcenter.impl.PhoneNumberBindActivity" />
         <activity android:name=".activity.personcenter.impl.MemberCenterActivity" />

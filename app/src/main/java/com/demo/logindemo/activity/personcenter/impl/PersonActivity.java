@@ -124,8 +124,8 @@ public class PersonActivity extends BaseActivity implements IPersonView {
     /**
      *售后
      */
-    @BindView(R.id.ll_activity_person_refund)
-    LinearLayout llActivityPersonRefund;
+    @BindView(R.id.ll_activity_person_refund_after_sales)
+    LinearLayout llActivityPersonRefundAfterSales;
     /**
      *购物车
      */
@@ -187,7 +187,7 @@ public class PersonActivity extends BaseActivity implements IPersonView {
             R.id.ll_activity_person_wait_shipments,
             R.id.ll_activity_person_wait_receiving,
             R.id.ll_activity_person_wait_picking,
-            R.id.ll_activity_person_refund,
+            R.id.ll_activity_person_refund_after_sales,
             R.id.ll_activity_person_shopping_cart,
             R.id.ll_activity_person_discount_coupon,
             R.id.ll_activity_person_bargain,
@@ -287,7 +287,7 @@ public class PersonActivity extends BaseActivity implements IPersonView {
                 intent = new Intent(PersonActivity.this,OrderCenterActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.ll_activity_person_refund:
+            case R.id.ll_activity_person_refund_after_sales:
                 Log.e(TAG, "onViewClicked: "+"跳转至 退货售后" );
                 intent = new Intent(PersonActivity.this,OrderCenterActivity.class);
                 startActivity(intent);

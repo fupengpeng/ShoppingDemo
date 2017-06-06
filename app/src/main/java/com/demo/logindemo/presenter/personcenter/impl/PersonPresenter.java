@@ -5,9 +5,12 @@ import android.util.Log;
 
 import com.demo.logindemo.activity.IBaseView;
 import com.demo.logindemo.activity.personcenter.impl.LoginActivity;
+import com.demo.logindemo.activity.personcenter.view.IPersonView;
 import com.demo.logindemo.activity.personcenter.view.IRegisterView;
 import com.demo.logindemo.common.Consts;
 import com.demo.logindemo.common.ObjectCallBack;
+import com.demo.logindemo.model.personcenter.factory.PersonModelFactory;
+import com.demo.logindemo.model.personcenter.interf.IPersonModel;
 import com.demo.logindemo.model.personcenter.interf.IRegisterModel;
 import com.demo.logindemo.presenter.BaseActivityPresenter;
 import com.demo.logindemo.presenter.personcenter.interf.IPersonPresenter;
@@ -22,17 +25,79 @@ import com.demo.logindemo.util.InfoUtils;
 public class PersonPresenter extends BaseActivityPresenter implements IPersonPresenter {
     public static final String TAG = "RegisterPresenter";
 
-    public PersonPresenter(IBaseView baseView) {
-        super(baseView);
+    private IPersonView personView;
+
+    private IPersonModel personModel;
+
+    public PersonPresenter(IPersonView personView) {
+        super(personView);
+        this.personView = personView;
+        this.personModel = PersonModelFactory.newInstance();
+    }
+
+
+    @Override
+    public void getInformationEdit() {
+
     }
 
     @Override
-    public void getVerificationCode(String mobilePhoneNumber) {
+    public void getPhoneNumberBind() {
 
     }
 
     @Override
-    public void register(String tel, String password) {
+    public void getAddressEdit() {
+
+    }
+
+    @Override
+    public void getMemberCenter() {
+
+    }
+
+    @Override
+    public void getIntegralPerson() {
+
+    }
+
+    @Override
+    public void getWithdrawDeposit() {
+
+    }
+
+    @Override
+    public void getOrderCenter() {
+
+    }
+
+    @Override
+    public void getShoppingCart() {
+
+    }
+
+    @Override
+    public void getDiscountCoupon() {
+
+    }
+
+    @Override
+    public void getBargain() {
+
+    }
+
+    @Override
+    public void getGroupon() {
+
+    }
+
+    @Override
+    public void getWinning() {
+
+    }
+
+    @Override
+    public void getIntegral() {
 
     }
 }

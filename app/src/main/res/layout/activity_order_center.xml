@@ -1,14 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.demo.logindemo.activity.personcenter.impl.OrderCenterActivity">
-    <TextView
-        android:textSize="45dp"
-        android:gravity="center"
-        android:text="订单中心"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</LinearLayout>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_activity_order_center_return"
+                android:layout_width="@dimen/dp_45"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="订单管理"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45" />
+            <ImageView
+                android:id="@+id/iv_activity_order_center_close"
+                android:layout_width="@dimen/dp_45"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45">
+            <LinearLayout
+                android:id="@+id/ll_activity_order_center_all"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_activity_order_center_all"
+                    android:gravity="center"
+                    android:text="全部"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+                <View
+                    android:id="@+id/v_activity_order_center_all"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_3"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_activity_order_center_wait_payment"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_activity_order_center_wait_payment"
+                    android:gravity="center"
+                    android:text="待付款"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+                <View
+                    android:id="@+id/v_activity_order_center_wait_payment"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_3"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_activity_order_center_wait_shipments"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_activity_order_center_wait_shipments"
+                    android:gravity="center"
+                    android:text="待发货"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+                <View
+                    android:id="@+id/v_activity_order_center_wait_shipments"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_3"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_activity_order_center_wait_receiving"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_activity_order_center_wait_receiving"
+                    android:gravity="center"
+                    android:text="待收货"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+                <View
+                    android:id="@+id/v_activity_order_center_wait_receiving"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_3"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_activity_order_center_wait_picking"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_activity_order_center_wait_picking"
+                    android:gravity="center"
+                    android:text="待评价"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+                <View
+                    android:id="@+id/v_activity_order_center_wait_picking"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_3"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_activity_order_center_wait_evaluation"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_activity_order_center_wait_evaluation"
+                    android:gravity="center"
+                    android:text="待提货"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+                <View
+                    android:id="@+id/v_activity_order_center_wait_evaluation"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_3"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_activity_order_center_refund_after_sales"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_activity_order_center_refund_after_sales"
+                    android:gravity="center"
+                    android:text="售后"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+                <View
+                    android:id="@+id/v_activity_order_center_refund_after_sales"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_3"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_activity_order_center_parent"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
+
