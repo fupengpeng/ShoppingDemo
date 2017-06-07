@@ -6,7 +6,7 @@
     <string name="group_finish">已团购</string>
     <string name="group_unfinished">未团购</string>
 
-    <string name="order_center_all">全部</string>
+    <string name="order_center_all">暂时没有相关订单</string>
     <string name="order_center_wait_payment">待付款</string>
     <string name="order_center_wait_shipments">待发货</string>
     <string name="order_center_wait_receiving">待收货</string>

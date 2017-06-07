@@ -124,7 +124,8 @@ public class OrderCenterActivity extends BaseActivity implements IOrderCenterVie
         // 开启一个Fragment事务
         transaction = fragmentManager.beginTransaction();
 
-        setTabSelection(1);
+        questionList();
+
     }
 
     @OnClick({R.id.iv_activity_order_center_return,
@@ -344,6 +345,47 @@ public class OrderCenterActivity extends BaseActivity implements IOrderCenterVie
         }
         if (orderCenterRefundAfterSalesFragment != null) {
             transaction.hide(orderCenterRefundAfterSalesFragment);
+        }
+    }
+
+    /**
+     * 初始化展示和点击筛选之后的fragment展示
+     */
+    private void questionList(){
+        Intent intent = this.getIntent();
+        fragmentRequestSign = intent.getIntExtra("fragmentRequestSign",0);
+        Log.e(TAG, "questionList: --------"+ fragmentRequestSign);
+        switch (fragmentRequestSign){
+            case 200:
+                //展示OrderCenterWaitPaymentFragment
+                Log.e(TAG, "questionList: "+"002" );
+                setTabSelection(WAIT_PAYMENT);
+                break;
+            case 300:
+                //展示OrderCenterWaitShipmentsFragment
+                Log.e(TAG, "questionList: "+"003" );
+                setTabSelection(WAIT_SHIPMENTS);
+                break;
+            case 400:
+                //展示我的已解决问题Fragment
+                Log.e(TAG, "questionList: "+"004" );
+                setTabSelection(WAIT_RECEIVING);
+                break;
+            case 600:
+                //展示我的未解决Fragment
+                Log.e(TAG, "questionList: "+"006" );
+                setTabSelection(WAIT_EVALUATION);
+                break;
+            case 700:
+                //展示我的未解决Fragment
+                Log.e(TAG, "questionList: "+"007" );
+                setTabSelection(REFUND_AFTER_SALES);
+                break;
+            default:
+                //展示ResolvedFragment
+                Log.e(TAG, "questionList: "+"001" );
+                setTabSelection(ALL);
+                break;
         }
     }
 }

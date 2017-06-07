@@ -55,10 +55,10 @@ public class AddressEditAdapter extends BaseAdapter {
 
             convertView = LayoutInflater.from(context).inflate(R.layout.item_place_of_receipt_manage, null);
             viewHolder = new ViewHolder(convertView);
-            viewHolder.itemActivityAddressEditUsername = (TextView) convertView.findViewById(R.id.item_activity_address_edit_username);
-            viewHolder.itemActivityAddressEditPhoneNumber = (TextView) convertView.findViewById(R.id.item_activity_address_edit_phone_number);
-            viewHolder.itemActivityAddressEditShippingAddress = (TextView) convertView.findViewById(R.id.item_activity_address_edit_shipping_address);
-            viewHolder.itemActivityAddressEditIsDefault = (CheckBox) convertView.findViewById(R.id.item_activity_address_edit_is_default);
+//            viewHolder.itemActivityAddressEditUsername = (TextView) convertView.findViewById(R.id.item_activity_address_edit_username);
+//            viewHolder.itemActivityAddressEditPhoneNumber = (TextView) convertView.findViewById(R.id.item_activity_address_edit_phone_number);
+//            viewHolder.itemActivityAddressEditShippingAddress = (TextView) convertView.findViewById(R.id.item_activity_address_edit_shipping_address);
+//            viewHolder.itemActivityAddressEditIsDefault = (CheckBox) convertView.findViewById(R.id.item_activity_address_edit_is_default);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();

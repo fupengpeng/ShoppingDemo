@@ -157,6 +157,8 @@ public class PersonActivity extends BaseActivity implements IPersonView {
     @BindView(R.id.ll_activity_person_integral_shopping)
     LinearLayout llActivityPersonIntegralShopping;
     private Intent intent;
+    private int fragmentRequestSign;
+    private Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -259,37 +261,73 @@ public class PersonActivity extends BaseActivity implements IPersonView {
                 break;
             case R.id.tv_activity_person_order_all:
                 Log.e(TAG, "onViewClicked: "+"跳转至 全部订单" );
+                fragmentRequestSign = 100;
                 intent = new Intent(PersonActivity.this,OrderCenterActivity.class);
+                bundle = new Bundle();
+                //将网络请求获取到的分类对象传递给ScreenActivity用于展示数据
+                bundle.putInt("fragmentRequestSign", fragmentRequestSign);
+                intent.putExtras(bundle);
                 startActivity(intent);
                 break;
             case R.id.ll_activity_person_order_all:
                 Log.e(TAG, "onViewClicked: "+"跳转至 全部订单" );
+                fragmentRequestSign = 100;
                 intent = new Intent(PersonActivity.this,OrderCenterActivity.class);
+
+                bundle = new Bundle();
+                //将网络请求获取到的分类对象传递给ScreenActivity用于展示数据
+                bundle.putInt("fragmentRequestSign", fragmentRequestSign);
+                intent.putExtras(bundle);
                 startActivity(intent);
                 break;
             case R.id.ll_activity_person_wait_payment:
                 Log.e(TAG, "onViewClicked: "+"跳转至 待付款" );
+                fragmentRequestSign = 200;
                 intent = new Intent(PersonActivity.this,OrderCenterActivity.class);
+                bundle = new Bundle();
+                //将网络请求获取到的分类对象传递给ScreenActivity用于展示数据
+                bundle.putInt("fragmentRequestSign", fragmentRequestSign);
+                intent.putExtras(bundle);
                 startActivity(intent);
                 break;
             case R.id.ll_activity_person_wait_shipments:
                 Log.e(TAG, "onViewClicked: "+"跳转至 待发货" );
+                fragmentRequestSign = 300;
                 intent = new Intent(PersonActivity.this,OrderCenterActivity.class);
+                bundle = new Bundle();
+                //将网络请求获取到的分类对象传递给ScreenActivity用于展示数据
+                bundle.putInt("fragmentRequestSign", fragmentRequestSign);
+                intent.putExtras(bundle);
                 startActivity(intent);
                 break;
             case R.id.ll_activity_person_wait_receiving:
                 Log.e(TAG, "onViewClicked: "+"跳转至 待收货" );
+                fragmentRequestSign = 400;
                 intent = new Intent(PersonActivity.this,OrderCenterActivity.class);
+                bundle = new Bundle();
+                //将网络请求获取到的分类对象传递给ScreenActivity用于展示数据
+                bundle.putInt("fragmentRequestSign", fragmentRequestSign);
+                intent.putExtras(bundle);
                 startActivity(intent);
                 break;
             case R.id.ll_activity_person_wait_picking:
                 Log.e(TAG, "onViewClicked: "+"跳转至 提货" );
+                fragmentRequestSign = 600;
                 intent = new Intent(PersonActivity.this,OrderCenterActivity.class);
+                bundle = new Bundle();
+                //将网络请求获取到的分类对象传递给ScreenActivity用于展示数据
+                bundle.putInt("fragmentRequestSign", fragmentRequestSign);
+                intent.putExtras(bundle);
                 startActivity(intent);
                 break;
             case R.id.ll_activity_person_refund_after_sales:
                 Log.e(TAG, "onViewClicked: "+"跳转至 退货售后" );
+                fragmentRequestSign = 700;
                 intent = new Intent(PersonActivity.this,OrderCenterActivity.class);
+                bundle = new Bundle();
+                //将网络请求获取到的分类对象传递给ScreenActivity用于展示数据
+                bundle.putInt("fragmentRequestSign", fragmentRequestSign);
+                intent.putExtras(bundle);
                 startActivity(intent);
                 break;
             case R.id.ll_activity_person_shopping_cart:

@@ -28,7 +28,10 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-public class AddressEditActivity extends BaseActivity implements IAddressEditView, AdapterView.OnItemClickListener,View.OnClickListener{
+public class AddressEditActivity extends BaseActivity
+        implements IAddressEditView,
+        AdapterView.OnItemClickListener,
+        View.OnClickListener{
     public static final String TAG = "AddressEditActivity";
 
     @BindView(R.id.iv_activity_address_edit_return)
