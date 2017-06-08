@@ -27,13 +27,6 @@
             android:text="@string/order_center_all" />
     </LinearLayout>
 
-<!--    <com.handmark.pulltorefresh.library.PullToRefreshListView
-        android:id="@+id/ptrlv_fragment_order_center_all"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#99ff44"
-        android:divider="@null"
-        android:scrollbars="none" />-->
 
     <com.handmark.pulltorefresh.library.PullToRefreshListView
         xmlns:ptr="http://schemas.android.com/apk/res-auto"
@@ -45,6 +38,9 @@
         ptr:ptrAnimationStyle="flip"
         ptr:ptrHeaderBackground="#383838"
         ptr:ptrHeaderTextColor="#FFFFFF"
+        android:divider="@null"
+        android:scrollbars="none"
+
         />
 <!--    <ListView
         android:id="@+id/ptrlv_fragment_order_center_all"

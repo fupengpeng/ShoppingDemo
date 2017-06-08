@@ -8,9 +8,11 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/ll_address_edit_popup_window">
+        android:id="@+id/ll_address_edit_popup_window_edit">
 
         <LinearLayout
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_50">
@@ -20,12 +22,12 @@
             <TextView
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="@dimen/dp_18"
+                android:textSize="@dimen/dp_20"
                 android:text="修改收货地址"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
             <TextView
-                android:id="@+id/tv_address_edit_popup_window_close"
+                android:id="@+id/tv_address_edit_popup_window_edit_close"
                 android:gravity="center"
                 android:textSize="@dimen/dp_18"
                 android:text="关闭"
@@ -35,7 +37,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_100"
+            android:layout_height="@dimen/dp_80"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -61,7 +63,7 @@
                         android:layout_height="match_parent" />
 
                     <EditText
-                        android:id="@+id/et_address_edit_popup_window_username"
+                        android:id="@+id/et_address_edit_popup_window_edit_username"
                         android:hint="请填写收货人姓名"
                         android:textColor="#969696"
                         android:background="@null"
@@ -76,7 +78,7 @@
                     android:layout_marginRight="@dimen/dp_10"
                     android:background="@color/btn_background"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_3"/>
+                    android:layout_height="@dimen/dp_1"/>
                 <!--收货人电话-->
                 <LinearLayout
                     android:layout_marginLeft="@dimen/dp_10"
@@ -95,12 +97,13 @@
                         android:layout_height="match_parent" />
 
                     <EditText
-                        android:id="@+id/et_address_edit_popup_window_phone_number"
+                        android:id="@+id/et_address_edit_popup_window_edit_phone_number"
                         android:hint="请填写手机号码"
                         android:textColor="#969696"
                         android:background="@null"
                         android:layout_gravity="center"
                         android:layout_weight="0.8"
+                        android:textSize="@dimen/dp_18"
                         android:layout_width="0dp"
                         android:layout_height="match_parent" />
                 </LinearLayout>
@@ -109,7 +112,7 @@
                     android:layout_marginRight="@dimen/dp_10"
                     android:background="@color/btn_background"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_3"/>
+                    android:layout_height="@dimen/dp_1"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -119,7 +122,7 @@
             android:layout_marginRight="@dimen/dp_10"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_50">
+            android:layout_height="@dimen/dp_40">
             <TextView
                 android:text="区域信息："
                 android:gravity="center|left"
@@ -128,7 +131,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent" />
             <TextView
-                android:id="@+id/tv_address_edit_popup_window_address_province_city"
+                android:id="@+id/tv_address_edit_popup_window_edit_address_province_city"
                 android:gravity="center|left"
                 android:text="请填写区域信息"
                 android:textColor="#969696"
@@ -142,14 +145,14 @@
             android:layout_marginRight="@dimen/dp_10"
             android:background="@color/btn_background"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_3"/>
+            android:layout_height="@dimen/dp_1"/>
         <!--详细地址-->
         <LinearLayout
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginRight="@dimen/dp_10"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_50">
+            android:layout_height="@dimen/dp_40">
             <TextView
                 android:text="详细地址："
                 android:gravity="center|left"
@@ -158,7 +161,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent" />
             <EditText
-                android:id="@+id/et_address_edit_popup_window_address_street"
+                android:id="@+id/et_address_edit_popup_window_edit_address_street"
                 android:hint="请输入街道门牌信息"
                 android:textColor="#969696"
                 android:background="@null"
@@ -172,14 +175,14 @@
             android:layout_marginRight="@dimen/dp_10"
             android:background="@color/btn_background"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_3"/>
+            android:layout_height="@dimen/dp_1"/>
         <!--邮政编码-->
         <LinearLayout
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_marginRight="@dimen/dp_10"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_50">
+            android:layout_height="@dimen/dp_40">
             <TextView
                 android:text="邮政编码："
                 android:gravity="center|left"
@@ -188,7 +191,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent" />
             <EditText
-                android:id="@+id/et_address_edit_popup_window_postcode"
+                android:id="@+id/et_address_edit_popup_window_edit_postcode"
                 android:hint="选择输入"
                 android:textColor="#969696"
                 android:background="@null"
@@ -203,16 +206,19 @@
             android:layout_marginRight="@dimen/dp_10"
             android:background="@color/btn_background"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_3"/>
+            android:layout_height="@dimen/dp_1"/>
 
         <Button
-            android:id="@+id/btn_address_edit_popup_window_save"
+            android:id="@+id/btn_address_edit_popup_window_edit_save"
             android:text="保存"
+            android:background="@drawable/shape_rounded_rectangle_btn_enable_down"
+            android:layout_margin="@dimen/dp_10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center" />
         <Button
-            android:id="@+id/btn_address_edit_popup_window_delete"
+            android:id="@+id/btn_address_edit_popup_window_edit_delete"
+            android:layout_margin="@dimen/dp_10"
             android:text="删除"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

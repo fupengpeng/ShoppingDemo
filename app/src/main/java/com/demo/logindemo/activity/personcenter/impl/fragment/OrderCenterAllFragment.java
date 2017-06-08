@@ -41,7 +41,8 @@ import butterknife.Unbinder;
  *
  */
 public class OrderCenterAllFragment extends Fragment
-        implements View.OnClickListener {
+//        implements View.OnClickListener
+{
 
 
     public static final String TAG = "OrderCenterAllFragment";
@@ -120,6 +121,7 @@ public class OrderCenterAllFragment extends Fragment
         // Inflate the layout for this fragment
         orderCenterAllFragmentView = inflater.inflate(R.layout.fragment_order_center_all, container, false);
         unbinder = ButterKnife.bind(this, orderCenterAllFragmentView);
+
         getOrderCenterActivity();
         parseData();
         // 初始化
@@ -132,14 +134,15 @@ public class OrderCenterAllFragment extends Fragment
 //        ptrlvFragmentOrderCenterAll.setAdapter(orderCenterAllFragmentAdapter);
 
 
-
-
         return orderCenterAllFragmentView;
     }
 
 
+
+
     /**
-     * 数据对象获取
+     *
+     * 根据数据对象设置适配器数据
      * @return
      */
     private List<Map<String, Object>> getData() {
@@ -160,7 +163,7 @@ public class OrderCenterAllFragment extends Fragment
     }
 
     /**
-     * 根据数据对象设置适配器数据
+     * 数据对象获取
      */
     private void parseData() {
         orderCenterOrderList = new OrderCenterOrderList();
@@ -185,21 +188,17 @@ public class OrderCenterAllFragment extends Fragment
         unbinder.unbind();
     }
 
-    @Override
-    public void onClick(View v) {
-
-    }
-
 
     /**
      * 初始化
      */
     private void init() {
         Log.e(TAG, "init: "+"初始化" );
-        // 设置加载模式
-        PullToRefreshUtils.setPullBoth(ptrlvFragmentOrderCenterAll);
+
         // 绑定数据
         bindData();
+        // 设置加载模式
+        PullToRefreshUtils.setPullBoth(ptrlvFragmentOrderCenterAll);
         // 刷新数据
         refreshData(1);
     }
@@ -213,7 +212,6 @@ public class OrderCenterAllFragment extends Fragment
         // 子项点击监听器
         ptrlvFragmentOrderCenterAll.setOnItemClickListener(new InnerOnItemClickListener());
     }
-
     /**
      * 刷新监听器
      */
@@ -222,10 +220,42 @@ public class OrderCenterAllFragment extends Fragment
         public void onPullDownToRefresh(PullToRefreshBase refreshView) {
             // 下拉刷新
             refreshData(1);
+
+            OrderCenterOrderList ocola = new OrderCenterOrderList();
+            List<OrderCenterOrderObject> orderCenterOrderObjects = new ArrayList<OrderCenterOrderObject>();
+            for (int i = 0; i < 3; i++) {
+                OrderCenterOrderObject orderCenterOrderObject = new OrderCenterOrderObject();
+                orderCenterOrderObject.setOrderCenterOrderListOrderNumber("订单号：----增加数据----" + i + "--------");
+                orderCenterOrderObject.setOrderCenterOrderListCommodityPic(R.drawable.nvshengtouxiang);
+                orderCenterOrderObject.setOrderCenterOrderListCommodityName("商品名称：----下拉刷新----" + i + "--------");
+                orderCenterOrderObject.setOrderCenterOrderListCommodityQuantity("商品数量：----下拉刷新----" + i + "--------");
+                orderCenterOrderObject.setOrderCenterOrderListCommodityAggregatePrice("商品价格：----下拉刷新----" + i + "---------");
+                orderCenterOrderObjects.add(orderCenterOrderObject);
+            }
+            ocola.setOrderCenterOrderObjectList(orderCenterOrderObjects);
+
+            List<Map<String, Object>> lista = new ArrayList<Map<String, Object>>();
+            Map<String, Object> map;
+            for (int i = 0; i < ocola.getOrderCenterOrderObjectList().size(); i++) {
+                map = new HashMap<String, Object>();
+                map.put("orderCenterOrderListOrderNumber", ocola.getOrderCenterOrderObjectList().get(i).getOrderCenterOrderListOrderNumber());
+                map.put("orderCenterOrderListCommodityPic", ocola.getOrderCenterOrderObjectList().get(i).getOrderCenterOrderListCommodityPic());
+                map.put("orderCenterOrderListCommodityName", ocola.getOrderCenterOrderObjectList().get(i).getOrderCenterOrderListCommodityName());
+                map.put("orderCenterOrderListCommodityQuantity", ocola.getOrderCenterOrderObjectList().get(i).getOrderCenterOrderListCommodityQuantity());
+                map.put("orderCenterOrderListCommodityAggregatePrice", ocola.getOrderCenterOrderObjectList().get(i).getOrderCenterOrderListCommodityAggregatePrice());
+                lista.add(map);
+            }
+            orderCenterAllFragmentAdapter.addFirst(lista);
+            new FinishRefresh().execute();
+            orderCenterAllFragmentAdapter.notifyDataSetChanged();
         }
 
         @Override
         public void onPullUpToRefresh(PullToRefreshBase refreshView) {
+
+
+
+            totalPage = 5;
             // 判断是否还有更多数据
             if (currentPage >= totalPage) {
                 Toast.makeText(getOrderCenterActivity(), "没有更多数据", Toast.LENGTH_SHORT).show();
@@ -233,10 +263,37 @@ public class OrderCenterAllFragment extends Fragment
                 PullToRefreshUtils.refreshComplete(ptrlvFragmentOrderCenterAll);
                 return;
             }
-
             // 上拉加载
             currentPage++;
             refreshData(currentPage);
+
+            OrderCenterOrderList ocola = new OrderCenterOrderList();
+            List<OrderCenterOrderObject> orderCenterOrderObjects = new ArrayList<OrderCenterOrderObject>();
+            for (int i = 0; i < 3; i++) {
+                OrderCenterOrderObject orderCenterOrderObject = new OrderCenterOrderObject();
+                orderCenterOrderObject.setOrderCenterOrderListOrderNumber("订单号：----增加数据----" + i + "--------");
+                orderCenterOrderObject.setOrderCenterOrderListCommodityPic(R.drawable.nvshengtouxiang);
+                orderCenterOrderObject.setOrderCenterOrderListCommodityName("商品名称：----sssssss----" + i + "--------");
+                orderCenterOrderObject.setOrderCenterOrderListCommodityQuantity("商品数量：----sssssss----" + i + "--------");
+                orderCenterOrderObject.setOrderCenterOrderListCommodityAggregatePrice("商品价格：----sssssss----" + i + "---------");
+                orderCenterOrderObjects.add(orderCenterOrderObject);
+            }
+            ocola.setOrderCenterOrderObjectList(orderCenterOrderObjects);
+
+            List<Map<String, Object>> lista = new ArrayList<Map<String, Object>>();
+            Map<String, Object> map;
+            for (int i = 0; i < ocola.getOrderCenterOrderObjectList().size(); i++) {
+                map = new HashMap<String, Object>();
+                map.put("orderCenterOrderListOrderNumber", ocola.getOrderCenterOrderObjectList().get(i).getOrderCenterOrderListOrderNumber());
+                map.put("orderCenterOrderListCommodityPic", ocola.getOrderCenterOrderObjectList().get(i).getOrderCenterOrderListCommodityPic());
+                map.put("orderCenterOrderListCommodityName", ocola.getOrderCenterOrderObjectList().get(i).getOrderCenterOrderListCommodityName());
+                map.put("orderCenterOrderListCommodityQuantity", ocola.getOrderCenterOrderObjectList().get(i).getOrderCenterOrderListCommodityQuantity());
+                map.put("orderCenterOrderListCommodityAggregatePrice", ocola.getOrderCenterOrderObjectList().get(i).getOrderCenterOrderListCommodityAggregatePrice());
+                lista.add(map);
+            }
+            orderCenterAllFragmentAdapter.addLast(lista);
+            new FinishRefresh().execute();
+            orderCenterAllFragmentAdapter.notifyDataSetChanged();
         }
     }
 
@@ -248,7 +305,7 @@ public class OrderCenterAllFragment extends Fragment
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             // 数据源当前索引
             int pos = position - 1;
-            //
+
         }
     }
 
@@ -258,8 +315,9 @@ public class OrderCenterAllFragment extends Fragment
     private void bindData() {
         Log.e(TAG, "bindData: "+"绑定数据");
         list = getData();
-//        orderCenterAllFragmentAdapter = new OrderCenterAllFragmentAdapter(getOrderCenterActivity(),list);
-//        ptrlvFragmentOrderCenterAll.setAdapter(orderCenterAllFragmentAdapter);
+        setData(list,2);
+        orderCenterAllFragmentAdapter = new OrderCenterAllFragmentAdapter(context,list);
+        ptrlvFragmentOrderCenterAll.setAdapter(orderCenterAllFragmentAdapter);
     }
 
     /**
@@ -267,8 +325,6 @@ public class OrderCenterAllFragment extends Fragment
      */
     private void refreshData(int page) {
         currentPage = page;
-        // 加载数据
-
     }
 
     /**
@@ -282,6 +338,7 @@ public class OrderCenterAllFragment extends Fragment
         if (datas == null || datas.size() == 0) {
             // 显示提示
             llFragmentOrderCenterAll.setVisibility(View.VISIBLE);
+
             // 清空现有数据
             list.clear();
 //            orderCenterAllFragmentAdapter.notifyDataSetChanged();
@@ -307,9 +364,30 @@ public class OrderCenterAllFragment extends Fragment
         PullToRefreshUtils.refreshComplete(ptrlvFragmentOrderCenterAll);
     }
 
+    /**
+     * 异步任务，模仿网络请求
+     */
+    private class FinishRefresh extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... params) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result){
+            orderCenterAllFragmentAdapter.notifyDataSetChanged();
+            ptrlvFragmentOrderCenterAll.onRefreshComplete();
+        }
+    }
 
 
-
+    /**
+     * 适配器
+     */
     class OrderCenterAllFragmentAdapter extends BaseAdapter{
 
         public static final String TAG = "OrderCenterAllFragmentAdapter";
@@ -443,7 +521,6 @@ public class OrderCenterAllFragment extends Fragment
         }
 
     }
-
 
 
 

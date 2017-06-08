@@ -3,35 +3,26 @@ package com.demo.logindemo.customerview;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.demo.logindemo.R;
-import com.demo.logindemo.util.ToastUtils;
 import com.lljjcoder.citypickerview.widget.CityPicker;
-
-import butterknife.BindView;
-import butterknife.OnClick;
 
 /**
  * Created by fupengpeng on 2017/6/3 0003.
  */
 
-public class AddressEditPopupWindow extends PopupWindow {
+public class EditAddressEditPopupWindow extends PopupWindow {
     public static final String TAG = "AddressEditPopupWindow";
     TextView tvAddressEditPopupWindowClose;
     EditText etAddressEditPopupWindowUsername;
@@ -40,6 +31,7 @@ public class AddressEditPopupWindow extends PopupWindow {
     EditText etAddressEditPopupWindowAddressStreet;
     EditText etAddressEditPopupWindowPostcode;
     Button btnAddressEditPopupWindowSave;
+    Button btnAddressEditPopupWindowDelete;
     private View mMenuView;
     private String username;
     private String phoneNumber;
@@ -47,22 +39,61 @@ public class AddressEditPopupWindow extends PopupWindow {
     private String addressStreet;
     private String postCode;
 
+    public String getUsername() {
+        return username;
+    }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-    public AddressEditPopupWindow(final Activity context, View.OnClickListener onClickListener) {
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getAddressProvinceCity() {
+        return addressProvinceCity;
+    }
+
+    public void setAddressProvinceCity(String addressProvinceCity) {
+        this.addressProvinceCity = addressProvinceCity;
+    }
+
+    public String getAddressStreet() {
+        return addressStreet;
+    }
+
+    public void setAddressStreet(String addressStreet) {
+        this.addressStreet = addressStreet;
+    }
+
+    public String getPostCode() {
+        return postCode;
+    }
+
+    public void setPostCode(String postCode) {
+        this.postCode = postCode;
+    }
+
+    public EditAddressEditPopupWindow(final Activity context, View.OnClickListener onClickListener) {
         super(context);
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        mMenuView = inflater.inflate(R.layout.add_place_of_receipt_popupwindow, null);
+        mMenuView = inflater.inflate(R.layout.edit_place_of_receipt_popupwindow, null);
 
-        btnAddressEditPopupWindowSave = (Button) mMenuView.findViewById(R.id.btn_address_edit_popup_window_save);
-        tvAddressEditPopupWindowClose = (TextView) mMenuView.findViewById(R.id.tv_address_edit_popup_window_close);
+        btnAddressEditPopupWindowDelete = (Button) mMenuView.findViewById(R.id.btn_address_edit_popup_window_edit_delete);
+        btnAddressEditPopupWindowSave = (Button) mMenuView.findViewById(R.id.btn_address_edit_popup_window_edit_save);
+        tvAddressEditPopupWindowClose = (TextView) mMenuView.findViewById(R.id.tv_address_edit_popup_window_edit_close);
 
-        etAddressEditPopupWindowUsername = (EditText) mMenuView.findViewById(R.id.et_address_edit_popup_window_username);
-        etAddressEditPopupWindowPhoneNumber = (EditText) mMenuView.findViewById(R.id.et_address_edit_popup_window_phone_number);
-        tvAddressEditPopupWindowAddressProvinceCity = (TextView) mMenuView.findViewById(R.id.tv_address_edit_popup_window_address_province_city);
-        etAddressEditPopupWindowAddressStreet = (EditText) mMenuView.findViewById(R.id.et_address_edit_popup_window_address_street);
-        etAddressEditPopupWindowPostcode = (EditText) mMenuView.findViewById(R.id.et_address_edit_popup_window_postcode);
+        etAddressEditPopupWindowUsername = (EditText) mMenuView.findViewById(R.id.et_address_edit_popup_window_edit_username);
+        etAddressEditPopupWindowPhoneNumber = (EditText) mMenuView.findViewById(R.id.et_address_edit_popup_window_edit_phone_number);
+        tvAddressEditPopupWindowAddressProvinceCity = (TextView) mMenuView.findViewById(R.id.tv_address_edit_popup_window_edit_address_province_city);
+        etAddressEditPopupWindowAddressStreet = (EditText) mMenuView.findViewById(R.id.et_address_edit_popup_window_edit_address_street);
+        etAddressEditPopupWindowPostcode = (EditText) mMenuView.findViewById(R.id.et_address_edit_popup_window_edit_postcode);
 
 
 
@@ -87,10 +118,7 @@ public class AddressEditPopupWindow extends PopupWindow {
 
             @Override
             public void afterTextChanged(Editable s) {
-                username = etAddressEditPopupWindowUsername.getText().toString().trim();
-
-                Log.e(TAG, "afterTextChanged: ----"+username );
-
+                username = etAddressEditPopupWindowUsername.getText().toString();
             }
         });
         etAddressEditPopupWindowPhoneNumber.addTextChangedListener(new TextWatcher() {
@@ -106,11 +134,7 @@ public class AddressEditPopupWindow extends PopupWindow {
 
             @Override
             public void afterTextChanged(Editable s) {
-
-
                 phoneNumber = etAddressEditPopupWindowPhoneNumber.getText().toString();
-
-                Log.e(TAG, "afterTextChanged: ----"+phoneNumber );
             }
         });
         etAddressEditPopupWindowAddressStreet.addTextChangedListener(new TextWatcher() {
@@ -127,7 +151,6 @@ public class AddressEditPopupWindow extends PopupWindow {
             @Override
             public void afterTextChanged(Editable s) {
                 addressStreet = etAddressEditPopupWindowAddressStreet.getText().toString();
-                Log.e(TAG, "afterTextChanged: ----"+addressStreet );
             }
         });
         etAddressEditPopupWindowPostcode.addTextChangedListener(new TextWatcher() {
@@ -144,18 +167,11 @@ public class AddressEditPopupWindow extends PopupWindow {
             @Override
             public void afterTextChanged(Editable s) {
                 postCode = etAddressEditPopupWindowPostcode.getText().toString();
-                Log.e(TAG, "afterTextChanged: ----"+postCode );
             }
         });
 
-//        //取消按钮
-//        tvAddressEditPopupWindowClose.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                //销毁弹出框
-//                dismiss();
-//            }
-//        });
         //设置按钮监听
+        btnAddressEditPopupWindowDelete.setOnClickListener(onClickListener);
         btnAddressEditPopupWindowSave.setOnClickListener(onClickListener);
         tvAddressEditPopupWindowClose.setOnClickListener(onClickListener);
         //设置SelectPicPopupWindow的View
@@ -177,7 +193,7 @@ public class AddressEditPopupWindow extends PopupWindow {
 
             public boolean onTouch(View v, MotionEvent event) {
 
-                int height = mMenuView.findViewById(R.id.ll_address_edit_popup_window).getTop();
+                int height = mMenuView.findViewById(R.id.ll_address_edit_popup_window_edit).getTop();
                 int y = (int) event.getY();
                 if (event.getAction() == MotionEvent.ACTION_UP) {
                     if (y < height) {
@@ -236,51 +252,8 @@ public class AddressEditPopupWindow extends PopupWindow {
                 //为TextView赋值
                 tvAddressEditPopupWindowAddressProvinceCity.setText(province.trim() + "-" + city.trim() + "-" + district.trim());
                 addressProvinceCity = tvAddressEditPopupWindowAddressProvinceCity.getText().toString().trim();
-
-                Log.e(TAG, "onSelected:---- "+ addressProvinceCity);
             }
         });
-    }
-
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getAddressProvinceCity() {
-        return addressProvinceCity;
-    }
-
-    public void setAddressProvinceCity(String addressProvinceCity) {
-        this.addressProvinceCity = addressProvinceCity;
-    }
-
-    public String getAddressStreet() {
-        return addressStreet;
-    }
-
-    public void setAddressStreet(String addressStreet) {
-        this.addressStreet = addressStreet;
-    }
-
-    public String getPostCode() {
-        return postCode;
-    }
-
-    public void setPostCode(String postCode) {
-        this.postCode = postCode;
     }
 
 }

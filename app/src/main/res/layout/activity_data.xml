@@ -9,11 +9,26 @@
     <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
-            android:gravity="center"
-            android:text="完善会员资料"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_35" />
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_activity_data_return"
+                android:layout_width="45dp"
+                android:layout_height="45dp" />
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="完善会员资料"
+                android:textSize="@dimen/dp_20"
+                android:layout_width="match_parent"
+                android:layout_height="45dp" />
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
         <View
             android:background="@color/background"
             android:layout_width="match_parent"
@@ -28,6 +43,7 @@
 
             <TextView
                 android:gravity="center|left"
+                android:textSize="@dimen/dp_15"
                 android:text="收货人："
                 android:layout_weight="0.2"
                 android:layout_width="0dp"
@@ -35,7 +51,9 @@
 
             <EditText
                 android:id="@+id/et_activity_data_username"
-                android:gravity="center"
+                android:hint="点击输入收货人姓名"
+                android:textSize="@dimen/dp_15"
+                android:gravity="center|left"
                 android:layout_weight="0.8"
                 android:layout_width="0dp"
                 android:background="@null"
@@ -50,23 +68,28 @@
 
             <TextView
                 android:gravity="center|left"
+                android:textSize="@dimen/dp_15"
                 android:text="性别："
                 android:layout_weight="0.2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent" />
 
             <RadioGroup
+                android:id="@+id/rg_activity_data_sex"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:layout_weight="0.8"
                 android:layout_width="0dp"
                 android:layout_height="match_parent">
                 <RadioButton
-                    android:layout_marginLeft="@dimen/dp_10"
+                    android:id="@+id/rbtn_activity_data_male"
+                    android:textSize="@dimen/dp_15"
                     android:text="男"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent" />
                 <RadioButton
+                    android:id="@+id/rbtn_activity_data_female"
+                    android:textSize="@dimen/dp_15"
                     android:layout_marginLeft="@dimen/dp_10"
                     android:text="女"
                     android:layout_width="wrap_content"
@@ -82,6 +105,7 @@
 
             <TextView
                 android:gravity="center|left"
+                android:textSize="@dimen/dp_15"
                 android:text="所在地："
                 android:layout_weight="0.2"
                 android:layout_width="0dp"
@@ -89,7 +113,9 @@
 
             <TextView
                 android:id="@+id/tv_activity_data_province_city"
-                android:layout_gravity="center"
+                android:hint="点击输入所在地"
+                android:textSize="@dimen/dp_15"
+                android:gravity="center|left"
                 android:layout_weight="0.8"
                 android:layout_width="0dp"
                 android:layout_height="match_parent" />
@@ -105,12 +131,15 @@
             <TextView
                 android:gravity="center|left"
                 android:text="生日："
+                android:textSize="@dimen/dp_15"
                 android:layout_weight="0.2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent" />
 
             <EditText
+                android:id="@+id/et_activity_data_birthday"
                 android:layout_gravity="center"
+                android:textSize="@dimen/dp_15"
                 android:background="@null"
                 android:layout_weight="0.8"
                 android:layout_width="0dp"
@@ -125,6 +154,7 @@
 
             <TextView
                 android:gravity="center|left"
+                android:textSize="@dimen/dp_15"
                 android:text="微信号："
                 android:layout_weight="0.2"
                 android:layout_width="0dp"
@@ -132,6 +162,8 @@
 
             <EditText
                 android:id="@+id/et_activity_data_we_chat"
+                android:textSize="@dimen/dp_15"
+                android:hint="点击输入微信号"
                 android:layout_gravity="center"
                 android:layout_weight="0.8"
                 android:layout_width="0dp"
@@ -140,11 +172,15 @@
         </LinearLayout>
         <Button
             android:id="@+id/btn_activity_data_confirm"
+            android:background="@drawable/shape_rounded_rectangle_btn_enable_down"
             android:layout_marginLeft="@dimen/dp_25"
             android:layout_marginRight="@dimen/dp_25"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:textSize="@dimen/dp_15"
             android:text="确认修改"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_50" />
+            android:layout_height="@dimen/dp_45" />
 
 
     </LinearLayout>

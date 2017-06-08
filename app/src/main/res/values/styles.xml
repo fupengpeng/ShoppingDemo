@@ -18,4 +18,9 @@
         <item name="android:singleLine">true</item>
     </style>
 
+    <style name="Popupwindow">
+        <item name="android:windowEnterAnimation">@anim/window_out</item>
+        <item name="android:windowExitAnimation">@anim/window_back</item>
+    </style>
+
 </resources>

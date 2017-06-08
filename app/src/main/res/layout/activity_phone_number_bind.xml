@@ -5,11 +5,34 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.demo.logindemo.activity.personcenter.impl.PhoneNumberBindActivity">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_activity_phone_number_bind_return"
+            android:layout_width="45dp"
+            android:layout_height="45dp" />
+
+        <TextView
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="绑定手机号"
+            android:textSize="@dimen/dp_20"
+            android:layout_width="match_parent"
+            android:layout_height="45dp" />
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
     <ImageView
-        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/nvshengtouxiang"
         android:layout_width="@dimen/dp_100"
-        android:layout_height="@dimen/dp_100" />
+        android:layout_height="@dimen/dp_95" />
     <com.demo.logindemo.customerview.ClearEditText
         android:id="@+id/cet_activity_phone_number_bind_phone_number"
         style="@style/AppTheme.EditText.Big"
@@ -71,6 +94,7 @@
 
     <Button
         android:id="@+id/btn_activity_phone_number_bind_bind"
+        android:layout_marginTop="@dimen/dp_20"
         android:layout_marginLeft="@dimen/dp_80"
         android:layout_marginRight="@dimen/dp_80"
         android:background="@color/btn_background_blue"
