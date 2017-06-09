@@ -11,7 +11,8 @@ import android.view.ViewGroup;
 import com.demo.logindemo.R;
 
 /**
- *
+ * 订单管理
+ *     待发货
  */
 public class OrderCenterWaitShipmentsFragment extends Fragment {
 

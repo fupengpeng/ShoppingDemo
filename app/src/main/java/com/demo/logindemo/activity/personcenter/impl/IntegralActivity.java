@@ -8,6 +8,9 @@ import com.demo.logindemo.activity.BaseActivity;
 import com.demo.logindemo.activity.personcenter.view.IIntegralPersonView;
 import com.demo.logindemo.activity.personcenter.view.IIntegralView;
 
+/**
+ * 积分商城
+ */
 public class IntegralActivity extends BaseActivity implements IIntegralView {
 
     @Override

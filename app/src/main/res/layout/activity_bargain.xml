@@ -20,7 +20,7 @@
             <TextView
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="优惠券列表"
+                android:text="我的砍价"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_45" />
             <ImageView
@@ -34,38 +34,38 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_45">
             <LinearLayout
-                android:id="@+id/ll_activity_bargain_unused"
+                android:id="@+id/ll_activity_bargain_at"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent">
                 <TextView
-                    android:id="@+id/tv_activity_bargain_unused"
+                    android:id="@+id/tv_activity_bargain_at"
                     android:gravity="center"
-                    android:text="未使用"
+                    android:text="砍价中"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="0dp" />
                 <View
-                    android:id="@+id/v_activity_bargain_unused"
+                    android:id="@+id/v_activity_bargain_at"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_3"/>
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/ll_activity_bargain_useless"
+                android:id="@+id/ll_activity_bargain_history"
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent">
                 <TextView
-                    android:id="@+id/tv_activity_bargain_useless"
+                    android:id="@+id/tv_activity_bargain_history"
                     android:gravity="center"
-                    android:text="已失效"
+                    android:text="砍价历史"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="0dp" />
                 <View
-                    android:id="@+id/v_activity_bargain_useless"
+                    android:id="@+id/v_activity_bargain_history"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_3"/>
             </LinearLayout>

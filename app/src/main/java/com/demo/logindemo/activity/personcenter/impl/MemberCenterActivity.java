@@ -20,6 +20,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * 会员中心界面
+ */
 public class MemberCenterActivity extends BaseActivity implements IMemgerCenterView {
 
     @BindView(R.id.iv_activity_member_center_query)

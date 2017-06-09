@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:orientation="vertical"
     tools:context="com.demo.logindemo.activity.personcenter.impl.fragment.OrderCenterAllFragment">
 
@@ -27,25 +28,12 @@
             android:text="@string/order_center_all" />
     </LinearLayout>
 
-
+    <!-- 数据列表 -->
     <com.handmark.pulltorefresh.library.PullToRefreshListView
-        xmlns:ptr="http://schemas.android.com/apk/res-auto"
         android:id="@+id/ptrlv_fragment_order_center_all"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ff00aa"
-        ptr:ptrDrawable="@drawable/default_ptr_flip"
-        ptr:ptrAnimationStyle="flip"
-        ptr:ptrHeaderBackground="#383838"
-        ptr:ptrHeaderTextColor="#FFFFFF"
         android:divider="@null"
         android:scrollbars="none"
-
         />
-<!--    <ListView
-        android:id="@+id/ptrlv_fragment_order_center_all"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>-->
-
-
 </LinearLayout>

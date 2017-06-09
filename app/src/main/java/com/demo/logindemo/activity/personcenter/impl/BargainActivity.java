@@ -12,14 +12,17 @@ import android.widget.TextView;
 
 import com.demo.logindemo.R;
 import com.demo.logindemo.activity.BaseActivity;
-import com.demo.logindemo.activity.personcenter.impl.fragment.DiscountCouponUnusedFragment;
-import com.demo.logindemo.activity.personcenter.impl.fragment.DiscountCouponUselessFragment;
+import com.demo.logindemo.activity.personcenter.impl.fragment.BargainAtFragment;
+import com.demo.logindemo.activity.personcenter.impl.fragment.BargainHistoryFragment;
 import com.demo.logindemo.activity.personcenter.view.IBargainView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * 我的砍价界面
+ */
 public class BargainActivity extends BaseActivity implements IBargainView {
 
     @BindView(R.id.iv_activity_bargain_return)
@@ -27,26 +30,27 @@ public class BargainActivity extends BaseActivity implements IBargainView {
     @BindView(R.id.iv_activity_bargain_close)
     ImageView ivActivityBargainClose;
 
-    @BindView(R.id.tv_activity_bargain_unused)
-    TextView tvActivityBargainUnused;
-    @BindView(R.id.v_activity_bargain_unused)
-    View vActivityBargainUnused;
-    @BindView(R.id.ll_activity_bargain_unused)
-    LinearLayout llActivityBargainUnused;
+    @BindView(R.id.tv_activity_bargain_at)
+    TextView tvActivityBargainAt;
+    @BindView(R.id.v_activity_bargain_at)
+    View vActivityBargainAt;
+    @BindView(R.id.ll_activity_bargain_at)
+    LinearLayout llActivityBargainAt;
 
-    @BindView(R.id.tv_activity_bargain_useless)
-    TextView tvActivityBargainUseless;
-    @BindView(R.id.v_activity_bargain_useless)
-    View vActivityBargainUseless;
-    @BindView(R.id.ll_activity_bargain_useless)
-    LinearLayout llActivityBargainUseless;
+    @BindView(R.id.tv_activity_bargain_history)
+    TextView tvActivityBargainHistory;
+    @BindView(R.id.v_activity_bargain_history)
+    View vActivityBargainHistory;
+    @BindView(R.id.ll_activity_bargain_history)
+    LinearLayout llActivityBargainHistory;
 
     @BindView(R.id.ll_activity_bargain_parent)
     LinearLayout llActivityBargainParent;
 
-    private DiscountCouponUnusedFragment discountCouponUnusedFragment;
 
-    private DiscountCouponUselessFragment discountCouponUselessFragment;
+    private BargainAtFragment bargainAtFragment;
+
+    private BargainHistoryFragment bargainHistoryFragment;
 
     private Intent intent;
 
@@ -81,28 +85,28 @@ public class BargainActivity extends BaseActivity implements IBargainView {
 
     @OnClick({R.id.iv_activity_bargain_return,
             R.id.iv_activity_bargain_close,
-            R.id.ll_activity_bargain_unused,
-            R.id.ll_activity_bargain_useless})
+            R.id.ll_activity_bargain_at,
+            R.id.ll_activity_bargain_history})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_activity_bargain_return:
                 break;
             case R.id.iv_activity_bargain_close:
                 break;
-
-            case R.id.ll_activity_bargain_unused:
+            case R.id.ll_activity_bargain_at:
                 setTabSelection(1);
                 break;
-            case R.id.ll_activity_bargain_useless:
+            case R.id.ll_activity_bargain_history:
                 setTabSelection(2);
                 break;
         }
     }
 
+
     /**
      * 根据传入的index参数来设置选中的Fragment。
      *
-     * @param index 每个图片对应的下标。0表示已解决，1表示未解决，2表示我要提问，3表示我的问题。
+     * @param index
      */
     private void setTabSelection(int index) {
 //        Log.e(TAG, "setTabSelection: " );
@@ -118,32 +122,32 @@ public class BargainActivity extends BaseActivity implements IBargainView {
         switch (index) {
             case UNUSED:
                 // 当点击了已解决图片时，改变控件的图片
-                tvActivityBargainUnused.setTextColor(0xffff0000);
-                vActivityBargainUnused.setBackgroundColor(0xffff0000);
+                tvActivityBargainAt.setTextColor(0xffff0000);
+                vActivityBargainAt.setBackgroundColor(0xffff0000);
                 Log.e(TAG, "setTabSelection--------------setTabSelection: " + "-----------0");
-                if (discountCouponUnusedFragment == null) {
+                if (bargainAtFragment == null) {
                     // 如果resolvedFragment为空，则创建一个并添加到界面上
-                    discountCouponUnusedFragment = new DiscountCouponUnusedFragment();
-                    transaction.add(R.id.ll_activity_bargain_parent, discountCouponUnusedFragment);
+                    bargainAtFragment = new BargainAtFragment();
+                    transaction.add(R.id.ll_activity_bargain_parent, bargainAtFragment);
                 } else {
                     // 如果resolvedFragment不为空，则直接将它显示出来
-                    transaction.show(discountCouponUnusedFragment);
+                    transaction.show(bargainAtFragment);
                 }
                 fragmentRequestSign = 100;
                 break;
             case USELESS:
 
                 // 当点击了未解决图片时，改变控件的图片
-                tvActivityBargainUseless.setTextColor(0xffff0000);
-                vActivityBargainUseless.setBackgroundColor(0xffff0000);
+                tvActivityBargainHistory.setTextColor(0xffff0000);
+                vActivityBargainHistory.setBackgroundColor(0xffff0000);
                 Log.e(TAG, "setTabSelection--------------setTabSelection: " + "-----------1");
-                if (discountCouponUselessFragment == null) {
+                if (bargainHistoryFragment == null) {
                     // 如果unsolvedFragment为空，则创建一个并添加到界面上
-                    discountCouponUselessFragment = new DiscountCouponUselessFragment();
-                    transaction.add(R.id.ll_activity_bargain_parent, discountCouponUselessFragment);
+                    bargainHistoryFragment = new BargainHistoryFragment();
+                    transaction.add(R.id.ll_activity_bargain_parent, bargainHistoryFragment);
                 } else {
                     // 如果unsolvedFragment不为空，则直接将它显示出来
-                    transaction.show(discountCouponUselessFragment);
+                    transaction.show(bargainHistoryFragment);
                 }
                 fragmentRequestSign = 200;
                 break;
@@ -155,10 +159,10 @@ public class BargainActivity extends BaseActivity implements IBargainView {
      * 清除掉所有的选中状态。（字体颜色和view背景颜色）
      */
     private void clearSelection() {
-        tvActivityBargainUnused.setTextColor(0xff000000);
-        vActivityBargainUnused.setBackgroundColor(0xdddddddd);
-        tvActivityBargainUseless.setTextColor(0xff000000);
-        vActivityBargainUseless.setBackgroundColor(0xdddddddd);
+        tvActivityBargainAt.setTextColor(0xff000000);
+        vActivityBargainAt.setBackgroundColor(0xdddddddd);
+        tvActivityBargainHistory.setTextColor(0xff000000);
+        vActivityBargainHistory.setBackgroundColor(0xdddddddd);
     }
 
     /**
@@ -167,11 +171,13 @@ public class BargainActivity extends BaseActivity implements IBargainView {
      */
     private void hideFragments(FragmentTransaction transaction) {
 //        Log.e(TAG, "hideFragments: " );
-        if (discountCouponUnusedFragment != null) {
-            transaction.hide(discountCouponUnusedFragment);
+        if (bargainAtFragment != null) {
+            transaction.hide(bargainAtFragment);
         }
-        if (discountCouponUselessFragment != null) {
-            transaction.hide(discountCouponUselessFragment);
+        if (bargainHistoryFragment != null) {
+            transaction.hide(bargainHistoryFragment);
         }
     }
+
+
 }

@@ -20,6 +20,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * 我的优惠券
+ */
 public class DiscountCouponActivity extends BaseActivity implements IDiscountCouponView {
 
     @BindView(R.id.iv_activity_discount_coupon_return)

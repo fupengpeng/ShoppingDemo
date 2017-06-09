@@ -7,6 +7,10 @@ import com.demo.logindemo.R;
 import com.demo.logindemo.activity.BaseActivity;
 import com.demo.logindemo.activity.personcenter.view.IShoppingCartView;
 
+
+/**
+ * 我的购物车界面
+ */
 public class ShoppingCartActivity extends BaseActivity implements IShoppingCartView {
 
     @Override

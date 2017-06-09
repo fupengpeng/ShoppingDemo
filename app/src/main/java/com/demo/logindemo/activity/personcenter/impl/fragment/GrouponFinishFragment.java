@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.demo.logindemo.R;
 
 /**
- *
+ * 团购完成
  */
 public class GrouponFinishFragment extends Fragment {
 

@@ -8,7 +8,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
-
     <application
         android:name=".application.MyApplication"
         android:allowBackup="true"
@@ -26,20 +25,17 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-
         <!-- 登录界面 -->
         <activity
             android:name=".activity.personcenter.impl.LoginActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize">
-
-        </activity>
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
 
         <!-- 主界面 -->
         <activity
             android:name=".activity.other.impl.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".activity.personcenter.impl.RegisterActivity" />
-        <activity android:name=".activity.personcenter.impl.PersonActivity" >
+        <activity android:name=".activity.personcenter.impl.PersonActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,9 +44,7 @@
         </activity>
         <activity android:name=".activity.personcenter.impl.InformationEditActivity" />
         <activity android:name=".activity.personcenter.impl.DataActivity" />
-        <activity android:name=".activity.personcenter.impl.AddressEditActivity" >
-
-        </activity>
+        <activity android:name=".activity.personcenter.impl.AddressEditActivity"></activity>
         <activity android:name=".activity.personcenter.impl.PhoneNumberBindActivity" />
         <activity android:name=".activity.personcenter.impl.MemberCenterActivity" />
         <activity android:name=".activity.personcenter.impl.OrderCenterActivity" />
@@ -61,7 +55,8 @@
         <activity android:name=".activity.personcenter.impl.WinningActivity" />
         <activity android:name=".activity.personcenter.impl.IntegralActivity" />
         <activity android:name=".activity.personcenter.impl.IntegralPersonActivity" />
-        <activity android:name=".activity.personcenter.impl.WithdrawDepositActivity"></activity>
+        <activity android:name=".activity.personcenter.impl.WithdrawDepositActivity" />
+        <activity android:name=".activity.personcenter.impl.OrderParticularsActivity"></activity>
     </application>
 
 </manifest>

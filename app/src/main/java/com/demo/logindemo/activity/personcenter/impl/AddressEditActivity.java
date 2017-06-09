@@ -33,7 +33,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-
+/**
+ * 地址管理界面
+ */
 public class AddressEditActivity extends BaseActivity
         implements IAddressEditView,
         AdapterView.OnItemClickListener,

@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.demo.logindemo.R;
 
 /**
- *
+ * 会员攻略
  */
 public class MemberCenterStrategyFragment extends Fragment {
 

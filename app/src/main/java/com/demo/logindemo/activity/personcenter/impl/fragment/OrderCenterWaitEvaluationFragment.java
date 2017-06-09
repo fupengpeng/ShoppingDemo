@@ -11,7 +11,8 @@ import android.view.ViewGroup;
 import com.demo.logindemo.R;
 
 /**
- *
+ * 订单管理
+ *     待评价
  */
 public class OrderCenterWaitEvaluationFragment extends Fragment {
 

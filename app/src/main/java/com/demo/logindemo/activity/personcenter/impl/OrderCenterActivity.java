@@ -20,12 +20,16 @@ import com.demo.logindemo.activity.personcenter.impl.fragment.OrderCenterWaitPic
 import com.demo.logindemo.activity.personcenter.impl.fragment.OrderCenterWaitReceivingFragment;
 import com.demo.logindemo.activity.personcenter.impl.fragment.OrderCenterWaitShipmentsFragment;
 import com.demo.logindemo.activity.personcenter.view.IOrderCenterView;
+import com.demo.logindemo.util.ToastUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class OrderCenterActivity extends BaseActivity implements IOrderCenterView {
+/**
+ * 订单管理界面
+ */
+public class OrderCenterActivity extends BaseActivity implements IOrderCenterView ,View.OnClickListener {
 
     @BindView(R.id.iv_activity_order_center_return)
     ImageView ivActivityOrderCenterReturn;
@@ -168,6 +172,55 @@ public class OrderCenterActivity extends BaseActivity implements IOrderCenterVie
                 setTabSelection(7);
                 break;
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.tv_item_fragment_order_center_order_list_order_number_explain:
+                startActivity(OrderParticularsActivity.class);
+                break;
+            case R.id.tv_item_fragment_order_center_order_list_order_number:
+                startActivity(OrderParticularsActivity.class);
+                break;
+            case R.id.tv_item_fragment_order_center_order_list_order_state:
+                startActivity(OrderParticularsActivity.class);
+                break;
+            case R.id.iv_item_fragment_order_center_order_list_delete_order:
+                // TODO: 2017/6/9 0009  删除订单待实现
+                ToastUtils.showLong(this,"删除订单待实现");
+                break;
+            case R.id.iv_item_fragment_order_center_order_list_commodity_pic:
+                startActivity(OrderParticularsActivity.class);
+                break;
+            case R.id.tv_item_fragment_order_center_order_list_commodity_name:
+                startActivity(OrderParticularsActivity.class);
+                break;
+            case R.id.tv_item_fragment_order_center_order_list_commodity_quantity:
+                startActivity(OrderParticularsActivity.class);
+                break;
+            case R.id.tv_item_fragment_order_center_order_list_commodity_pay:
+                startActivity(OrderParticularsActivity.class);
+                break;
+            case R.id.tv_item_fragment_order_center_order_list_commodity_aggregate_price:
+                startActivity(OrderParticularsActivity.class);
+                break;
+            case R.id.v_item_fragment_order_center_order_list_blank:
+                startActivity(OrderParticularsActivity.class);
+                break;
+            case R.id.btn_item_fragment_order_center_order_list_one:
+                // TODO: 2017/6/9 0009 订单相关操作待实现
+                ToastUtils.showLong(this,"再次购买待实现");
+                break;
+            case R.id.btn_item_fragment_order_center_order_list_two:
+                ToastUtils.showLong(this,"取消订单待实现");
+                break;
+            case R.id.btn_item_fragment_order_center_order_list_three:
+                ToastUtils.showLong(this,"待付款待实现");
+                break;
+
+        }
+
     }
 
 
@@ -388,4 +441,6 @@ public class OrderCenterActivity extends BaseActivity implements IOrderCenterVie
                 break;
         }
     }
+
+
 }

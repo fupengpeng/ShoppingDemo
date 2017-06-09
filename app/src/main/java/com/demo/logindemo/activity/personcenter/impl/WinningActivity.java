@@ -7,6 +7,10 @@ import com.demo.logindemo.R;
 import com.demo.logindemo.activity.BaseActivity;
 import com.demo.logindemo.activity.personcenter.view.IWinningView;
 
+
+/**
+ * 中奖纪录
+ */
 public class WinningActivity extends BaseActivity implements IWinningView {
 
     @Override

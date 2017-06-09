@@ -7,6 +7,10 @@ import com.demo.logindemo.R;
 import com.demo.logindemo.activity.BaseActivity;
 import com.demo.logindemo.activity.personcenter.view.IWithdrawDepositView;
 
+
+/**
+ * 提现余额界面
+ */
 public class WithdrawDepositActivity extends BaseActivity implements IWithdrawDepositView {
 
     @Override

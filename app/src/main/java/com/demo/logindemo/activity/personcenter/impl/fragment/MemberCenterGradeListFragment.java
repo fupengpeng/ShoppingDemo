@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.demo.logindemo.R;
 
 /**
- *
+ * 会员等级列表
  */
 public class MemberCenterGradeListFragment extends Fragment {
 

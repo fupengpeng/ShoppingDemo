@@ -11,7 +11,8 @@ import android.view.ViewGroup;
 import com.demo.logindemo.R;
 
 /**
- *
+ * 订单管理
+ *     退货/售后
  */
 public class OrderCenterRefundAfterSalesFragment extends Fragment {
 

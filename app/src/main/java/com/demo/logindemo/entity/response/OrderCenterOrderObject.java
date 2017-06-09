@@ -16,6 +16,10 @@ public class OrderCenterOrderObject implements Serializable {
      */
     private String orderCenterOrderListOrderNumber;
     /**
+     * 订单状态
+     */
+    private String orderCenterOrderListOrderState;
+    /**
      * 商品图片
      */
     private int orderCenterOrderListCommodityPic;
@@ -31,6 +35,14 @@ public class OrderCenterOrderObject implements Serializable {
      * 商品合计价格
      */
     private String orderCenterOrderListCommodityAggregatePrice;
+
+    public String getOrderCenterOrderListOrderState() {
+        return orderCenterOrderListOrderState;
+    }
+
+    public void setOrderCenterOrderListOrderState(String orderCenterOrderListOrderState) {
+        this.orderCenterOrderListOrderState = orderCenterOrderListOrderState;
+    }
 
     public String getOrderCenterOrderListOrderNumber() {
         return orderCenterOrderListOrderNumber;
