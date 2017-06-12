@@ -13,6 +13,7 @@ import android.support.v4.BuildConfig;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -118,12 +119,19 @@ public class InformationEditActivity extends BaseActivity implements IInformatio
                 dialog.dismiss();
                 break;
             /**
-             * 修改密码的确认修改密码按钮
+             * 修改密码的确认提交密码按钮
              */
             case R.id.btn_item_activity_information_edit_change_password_confirm:
-                if ((etItemActivityInformationEditChangePasswordNew.getText().toString().trim())
-                        .equals(etItemActivityInformationEditChangePasswordConfirm.getText().toString().trim())
-                        && etItemActivityInformationEditChangePasswordOld.getText().toString().trim() != null) {
+
+                if (TextUtils.isEmpty(etItemActivityInformationEditChangePasswordOld.getText().toString().trim())){
+                    ToastUtils.showLong(InformationEditActivity.this,"请输入原密码");
+                }else if (!(etItemActivityInformationEditChangePasswordNew.getText().toString().trim())
+                        .equals(etItemActivityInformationEditChangePasswordConfirm.getText().toString().trim())){
+                    ToastUtils.showLong(InformationEditActivity.this, "两次输入不同，请重新输入");
+                    etItemActivityInformationEditChangePasswordNew.setText("");
+                    etItemActivityInformationEditChangePasswordConfirm.setText("");
+                    etItemActivityInformationEditChangePasswordOld.setText("");
+                }else {
                     // 密码
                     String newPassword = etItemActivityInformationEditChangePasswordNew.getText().toString().trim();
                     // 验证原密码
@@ -131,16 +139,10 @@ public class InformationEditActivity extends BaseActivity implements IInformatio
 
                     // 确认提交
                     // TODO: 2017/6/6 验证原密码是否正确，正确，修改密码，错误，提示原密码输入错误
-                    ToastUtils.showLong(this, "原密码：" + oldPassword + "    新密码：" + newPassword);
+                    ToastUtils.showLong(this, "原密码：----" + oldPassword + "----    新密码：----" + newPassword+"----");
                     // TODO: 2017/6/8 0008 修改成功  提示，失败  提示
 
                     dialog.dismiss();
-
-                } else {
-                    ToastUtils.showLong(InformationEditActivity.this, "两次输入不同，请重新输入");
-                    etItemActivityInformationEditChangePasswordNew.setText("");
-                    etItemActivityInformationEditChangePasswordConfirm.setText("");
-                    etItemActivityInformationEditChangePasswordOld.setText("");
                 }
                 break;
         }

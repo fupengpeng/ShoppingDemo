@@ -1,13 +1,20 @@
 package com.demo.logindemo.activity.personcenter.impl;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
+import android.support.v7.app.AlertDialog;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -19,6 +26,8 @@ import com.demo.logindemo.activity.BaseActivity;
 import com.demo.logindemo.activity.personcenter.view.IDataView;
 import com.demo.logindemo.util.ToastUtils;
 import com.lljjcoder.citypickerview.widget.CityPicker;
+
+import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -69,8 +78,8 @@ public class DataActivity extends BaseActivity implements IDataView {
     /**
      * 生日
      */
-    @BindView(R.id.et_activity_data_birthday)
-    EditText etActivityDataBirthday;
+    @BindView(R.id.tv_activity_data_birthday)
+    TextView tvActivityDataBirthday;
     /**
      * 返回资料修改界面
      */
@@ -116,26 +125,6 @@ public class DataActivity extends BaseActivity implements IDataView {
         }
         provinceCity = tvActivityDataProvinceCity.getText().toString().trim();
 
-
-        etActivityDataBirthday.addTextChangedListener(new TextWatcher() {
-
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                birthday = etActivityDataBirthday.getText().toString().trim();
-            }
-        });
-
         etActivityDataWeChat.addTextChangedListener(new TextWatcher() {
 
 
@@ -157,9 +146,15 @@ public class DataActivity extends BaseActivity implements IDataView {
 
     }
 
-
+    // 记录当前的时间
+    private int year;
+    private int month;
+    private int day;
+    private DatePickerDialog datePickerDialog;
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @OnClick({R.id.tv_activity_data_province_city,
             R.id.btn_activity_data_confirm,
+            R.id.tv_activity_data_birthday,
             R.id.iv_activity_data_return})
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -174,10 +169,49 @@ public class DataActivity extends BaseActivity implements IDataView {
                 intent = new Intent(DataActivity.this, InformationEditActivity.class);
                 startActivity(intent);
                 break;
+            case  R.id.tv_activity_data_birthday:
+
+
+                // TODO: 2017/6/12 0012  ????????????????????????????????
+
+                datePickerDialog.show();
+
+                // 或许当前的年月日，小时，分钟
+                Calendar ca = Calendar.getInstance();
+                year = ca.get(Calendar.YEAR);
+                month = ca.get(Calendar.MONTH);
+                day = ca.get(Calendar.DAY_OF_MONTH);
+
+                datePickerDialog = new DatePickerDialog(this);
+
+                // 设置文本的内容：
+                tvActivityDataBirthday.setText(new StringBuilder().append(year).append("年")
+                        .append(month + 1).append("月")// 得到的月份+1，因为从0开始
+                        .append(day).append("日"));
+
+
+
+                datePickerDialog.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        year = year;
+                        month = month;
+                        day = dayOfMonth;
+
+                        String str1 = new String(new StringBuilder().append(year)
+                                .append("年").append(month + 1).append("月")// 得到的月份+1，因为从0开始
+                                .append(day).append("日"));
+                        // 设置文本的内容：
+                        tvActivityDataBirthday.setText(str1);
+                    }
+                });
+
+                break;
             case R.id.iv_activity_data_return:
                 intent = new Intent(DataActivity.this, InformationEditActivity.class);
                 startActivity(intent);
                 break;
+
         }
     }
 

@@ -86,7 +86,9 @@ public class MemberCenterActivity extends BaseActivity implements IMemgerCenterV
 
     }
 
-    @OnClick({R.id.iv_activity_member_center_query, R.id.ll_activity_member_center_grade_list, R.id.ll_activity_member_center_strategy})
+    @OnClick({R.id.iv_activity_member_center_query,
+            R.id.ll_activity_member_center_grade_list,
+            R.id.ll_activity_member_center_strategy})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_activity_member_center_query:

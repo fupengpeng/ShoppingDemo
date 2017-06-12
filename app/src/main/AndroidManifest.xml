@@ -28,7 +28,7 @@
         <!-- 登录界面 -->
         <activity
             android:name=".activity.personcenter.impl.LoginActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+            android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <!-- 主界面 -->
         <activity
@@ -44,7 +44,7 @@
         </activity>
         <activity android:name=".activity.personcenter.impl.InformationEditActivity" />
         <activity android:name=".activity.personcenter.impl.DataActivity" />
-        <activity android:name=".activity.personcenter.impl.AddressEditActivity"></activity>
+        <activity android:name=".activity.personcenter.impl.AddressEditActivity" />
         <activity android:name=".activity.personcenter.impl.PhoneNumberBindActivity" />
         <activity android:name=".activity.personcenter.impl.MemberCenterActivity" />
         <activity android:name=".activity.personcenter.impl.OrderCenterActivity" />
@@ -56,7 +56,10 @@
         <activity android:name=".activity.personcenter.impl.IntegralActivity" />
         <activity android:name=".activity.personcenter.impl.IntegralPersonActivity" />
         <activity android:name=".activity.personcenter.impl.WithdrawDepositActivity" />
-        <activity android:name=".activity.personcenter.impl.OrderParticularsActivity"></activity>
+        <activity android:name=".activity.personcenter.impl.OrderParticularsActivity" />
+        <activity android:name=".activity.personcenter.impl.OrderTrackingActivity" />
+        <activity android:name=".activity.personcenter.impl.CommodityParticularsActivity" />
+        <activity android:name=".activity.personcenter.impl.AlterationInsuranceActivity"></activity>
     </application>
 
 </manifest>

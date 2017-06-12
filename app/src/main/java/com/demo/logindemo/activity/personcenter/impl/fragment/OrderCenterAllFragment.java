@@ -309,8 +309,16 @@ public class OrderCenterAllFragment extends Fragment
      */
     private void bindData() {
         list = getData();
-        orderCenterAllFragmentAdapter = new OrderCenterAllFragmentAdapter(context,list);
-        ptrlvFragmentOrderCenterAll.setAdapter(orderCenterAllFragmentAdapter);
+        if (list == null){
+            llFragmentOrderCenterAll.setVisibility(View.VISIBLE);
+            ptrlvFragmentOrderCenterAll.setVisibility(View.GONE);
+        }else {
+            llFragmentOrderCenterAll.setVisibility(View.GONE);
+            ptrlvFragmentOrderCenterAll.setVisibility(View.VISIBLE);
+            orderCenterAllFragmentAdapter = new OrderCenterAllFragmentAdapter(context,list);
+            ptrlvFragmentOrderCenterAll.setAdapter(orderCenterAllFragmentAdapter);
+        }
+
     }
 
     /**
@@ -320,42 +328,6 @@ public class OrderCenterAllFragment extends Fragment
         currentPage = page;
     }
 
-//    /**
-//     * 设置数据
-//     *
-//     * @param datas 数据
-//     * @param tp    总页数 （通常数据和总页数以一个对象传过来，这里举例子分开传递的）
-//     */
-//    public void setData(List<Map<String,Object>> datas, int tp) {
-//        // 判断是否存在数据
-//        if (datas == null || datas.size() == 0) {
-//            // 显示提示
-//            llFragmentOrderCenterAll.setVisibility(View.VISIBLE);
-//
-//            // 清空现有数据
-//            list.clear();
-////            orderCenterAllFragmentAdapter.notifyDataSetChanged();
-//            // 调用刷新完成
-//            PullToRefreshUtils.refreshComplete(ptrlvFragmentOrderCenterAll);
-//            return;
-//        }
-//
-//        // 隐藏提示
-//        llFragmentOrderCenterAll.setVisibility(View.GONE);
-//
-//        // 设置总页数
-//        totalPage = tp;
-//
-//        // 刷新数据
-//        if (currentPage == 1) {
-//            list.clear();
-//        }
-//        list.addAll(datas);
-////        orderCenterAllFragmentAdapter.notifyDataSetChanged();
-//
-//        // 调用刷新完成
-//        PullToRefreshUtils.refreshComplete(ptrlvFragmentOrderCenterAll);
-//    }
 
     /**
      * 异步任务，模仿网络请求

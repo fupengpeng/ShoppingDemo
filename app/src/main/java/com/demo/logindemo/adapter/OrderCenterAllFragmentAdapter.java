@@ -188,6 +188,8 @@ public class OrderCenterAllFragmentAdapter extends BaseAdapter {
         return convertView;
     }
 
+
+    //ViewHolder静态类
     static class ViewHolder {
         /**
          * 订单号文本
@@ -262,7 +264,6 @@ public class OrderCenterAllFragmentAdapter extends BaseAdapter {
     }
 
 
-    //ViewHolder静态类
 
 
 }
