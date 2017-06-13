@@ -125,6 +125,7 @@
 
 
             </LinearLayout>
+
             <TextView
                 android:gravity="center"
                 android:text="目前还没有设置会员等级"
@@ -133,10 +134,15 @@
                 android:layout_height="0dp" />
 
         </LinearLayout>
+        <View
+            android:background="#dddddd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_5"/>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:background="#888888"
             android:layout_height="@dimen/dp_45">
             <LinearLayout
                 android:id="@+id/ll_activity_member_center_grade_list"
@@ -147,7 +153,8 @@
                 <TextView
                     android:id="@+id/tv_activity_member_center_grade_list"
                     android:gravity="center"
-                    android:text="未使用"
+                    android:textColor="#dddddd"
+                    android:text="会员等级列表"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="0dp" />
@@ -165,7 +172,8 @@
                 <TextView
                     android:id="@+id/tv_activity_member_center_strategy"
                     android:gravity="center"
-                    android:text="已失效"
+                    android:textColor="#dddddd"
+                    android:text="会员攻略"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="0dp" />

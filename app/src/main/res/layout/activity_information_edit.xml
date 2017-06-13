@@ -13,12 +13,12 @@ tools:context="com.demo.logindemo.activity.personcenter.impl.InformationEditActi
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="@dimen/dp_45">
 
         <ImageView
             android:id="@+id/iv_activity_information_return"
-            android:layout_width="45dp"
-            android:layout_height="45dp" />
+            android:layout_width="@dimen/dp_45"
+            android:layout_height="@dimen/dp_45" />
 
         <TextView
             android:layout_weight="1"
@@ -26,9 +26,9 @@ tools:context="com.demo.logindemo.activity.personcenter.impl.InformationEditActi
             android:text="请选择修改内容"
             android:textSize="@dimen/dp_20"
             android:layout_width="match_parent"
-            android:layout_height="45dp" />
+            android:layout_height="@dimen/dp_45" />
         <ImageView
-            android:layout_width="45dp"
+            android:layout_width="@dimen/dp_45"
             android:layout_height="match_parent" />
     </LinearLayout>
 
@@ -40,9 +40,9 @@ tools:context="com.demo.logindemo.activity.personcenter.impl.InformationEditActi
     <!--资料完善-->
     <LinearLayout
         android:id="@+id/ll_activity_information_edit_data"
-        android:layout_margin="@dimen/dp_10"
+        android:layout_margin="@dimen/dp_5"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_40">
+        android:layout_height="@dimen/dp_35">
         <TextView
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_weight="1"
@@ -73,9 +73,9 @@ tools:context="com.demo.logindemo.activity.personcenter.impl.InformationEditActi
     <!--收货地址-->
     <LinearLayout
         android:id="@+id/ll_activity_information_edit_address"
-        android:layout_margin="@dimen/dp_10"
+        android:layout_margin="@dimen/dp_5"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_40">
+        android:layout_height="@dimen/dp_35">
         <TextView
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_weight="1"
@@ -98,9 +98,9 @@ tools:context="com.demo.logindemo.activity.personcenter.impl.InformationEditActi
     <!--修改头像-->
     <LinearLayout
         android:id="@+id/ll_activity_information_edit_pic"
-        android:layout_margin="@dimen/dp_10"
+        android:layout_margin="@dimen/dp_5"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_40">
+        android:layout_height="@dimen/dp_35">
         <TextView
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_weight="1"
@@ -123,9 +123,9 @@ tools:context="com.demo.logindemo.activity.personcenter.impl.InformationEditActi
     <!--修改密码-->
     <LinearLayout
         android:id="@+id/ll_activity_information_edit_password"
-        android:layout_margin="@dimen/dp_10"
+        android:layout_margin="@dimen/dp_5"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_40">
+        android:layout_height="@dimen/dp_35">
         <TextView
             android:layout_marginLeft="@dimen/dp_10"
             android:layout_weight="1"
