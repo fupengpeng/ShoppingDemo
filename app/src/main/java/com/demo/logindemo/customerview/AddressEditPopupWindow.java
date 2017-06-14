@@ -143,8 +143,13 @@ public class AddressEditPopupWindow extends PopupWindow {
 
             @Override
             public void afterTextChanged(Editable s) {
+
+
+                // TODO: 2017/6/14 0014 bug  待解决
+
+
                 postCode = etAddressEditPopupWindowPostcode.getText().toString();
-                Log.e(TAG, "afterTextChanged: ----"+postCode );
+                Log.e(TAG, "afterTextChanged: "+etAddressEditPopupWindowPostcode.getText().toString().trim());
             }
         });
 

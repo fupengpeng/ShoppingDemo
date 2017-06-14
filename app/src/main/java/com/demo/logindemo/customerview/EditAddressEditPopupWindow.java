@@ -16,6 +16,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.demo.logindemo.R;
+import com.demo.logindemo.entity.ShippingAddress;
 import com.lljjcoder.citypickerview.widget.CityPicker;
 
 /**
@@ -79,7 +80,7 @@ public class EditAddressEditPopupWindow extends PopupWindow {
         this.postCode = postCode;
     }
 
-    public EditAddressEditPopupWindow(final Activity context, View.OnClickListener onClickListener) {
+    public EditAddressEditPopupWindow(final Activity context, View.OnClickListener onClickListener, ShippingAddress shippingAddress) {
         super(context);
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -94,6 +95,8 @@ public class EditAddressEditPopupWindow extends PopupWindow {
         tvAddressEditPopupWindowAddressProvinceCity = (TextView) mMenuView.findViewById(R.id.tv_address_edit_popup_window_edit_address_province_city);
         etAddressEditPopupWindowAddressStreet = (EditText) mMenuView.findViewById(R.id.et_address_edit_popup_window_edit_address_street);
         etAddressEditPopupWindowPostcode = (EditText) mMenuView.findViewById(R.id.et_address_edit_popup_window_edit_postcode);
+
+
 
 
 
@@ -169,6 +172,14 @@ public class EditAddressEditPopupWindow extends PopupWindow {
                 postCode = etAddressEditPopupWindowPostcode.getText().toString();
             }
         });
+
+        etAddressEditPopupWindowUsername.setText(shippingAddress.getUsername());
+        etAddressEditPopupWindowPhoneNumber.setText(shippingAddress.getPhoneNumber());
+        tvAddressEditPopupWindowAddressProvinceCity.setText(shippingAddress.getArea());
+        etAddressEditPopupWindowAddressStreet.setText(shippingAddress.getDetailedAddress());
+        etAddressEditPopupWindowPostcode.setText(shippingAddress.getZipCode());
+
+        addressProvinceCity = tvAddressEditPopupWindowAddressProvinceCity.getText().toString().trim();
 
         //设置按钮监听
         btnAddressEditPopupWindowDelete.setOnClickListener(onClickListener);

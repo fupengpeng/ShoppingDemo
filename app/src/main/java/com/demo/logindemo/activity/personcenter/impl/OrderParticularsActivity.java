@@ -1,13 +1,16 @@
 package com.demo.logindemo.activity.personcenter.impl;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.demo.logindemo.R;
 import com.demo.logindemo.activity.BaseActivity;
@@ -86,14 +89,29 @@ public class OrderParticularsActivity extends BaseActivity {
      * 接收订单列表传递过来的分类参数
      */
     int fragmentRequestSign;
+    /**
+     * 订单号
+     */
+    @BindView(R.id.tv_activity_order_particulars_order_number)
+    TextView tvActivityOrderParticularsOrderNumber;
+    /**
+     * 接收订单号的字符串
+     */
+    private String orderNumber;
+    //剪切板管理工具类
+    private ClipboardManager mClipboardManager;
+    //剪切板Data对象
+    private ClipData mClipData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_particulars);
+        mClipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
         orderParticulars();
         ButterKnife.bind(this);
     }
+
     /**
      * 在其他页面点击问题详情之后，进入到问题详情页面，在此通过intent获取传递过来的问题详情数据对象
      */
@@ -161,7 +179,7 @@ public class OrderParticularsActivity extends BaseActivity {
              * 加入购物车
              */
             case R.id.btn_activity_order_particulars_add_shopping_cart:
-                ToastUtils.showLong(this,"加入购物车待实现");
+                ToastUtils.showLong(this, "加入购物车待实现");
                 break;
             /**
              * 退换无忧保险
@@ -173,19 +191,36 @@ public class OrderParticularsActivity extends BaseActivity {
              * 复制订单号
              */
             case R.id.btn_activity_order_particulars_copy:
-                ToastUtils.showLong(this,"复制订单号待实现");
+                ToastUtils.showLong(this, "复制订单号待实现");
+                orderNumber = tvActivityOrderParticularsOrderNumber.getText().toString();
+                if (!TextUtils.isEmpty(orderNumber)) {
+                    //创建一个新的文本clip对象
+                    mClipData = ClipData.newPlainText("订单号复制", orderNumber);
+                    //把clip对象放在剪贴板中
+                    mClipboardManager.setPrimaryClip(mClipData);
+                    //GET贴板是否有内容
+                    mClipData = mClipboardManager.getPrimaryClip();
+                    //获取到内容
+                    ClipData.Item item = mClipData.getItemAt(0);
+                    String text = item.getText().toString();
+                }else {
+                    Toast.makeText(OrderParticularsActivity.this, "订单号为空，复制失败。",
+                            Toast.LENGTH_SHORT).show();
+                }
+
+
                 break;
             /**
              * 删除订单
              */
             case R.id.tv_activity_order_particulars_delete_order:
-                ToastUtils.showLong(this,"删除订单待实现");
+                ToastUtils.showLong(this, "删除订单待实现");
                 break;
             /**
              * 申请售后
              */
             case R.id.btn_activity_order_particulars_apply_for_after_sales:
-                ToastUtils.showLong(this,"申请售后待实现");
+                ToastUtils.showLong(this, "申请售后待实现");
                 break;
             /**
              * 再次购买

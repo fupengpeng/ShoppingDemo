@@ -10,28 +10,10 @@ import java.io.Serializable;
 public class ShippingAddress implements Serializable{
     private String username;
     private String phoneNumber;
-    private String shippingAddress;
+    private String area;
+    private String detailedAddress;
+    private String zipCode;
     private boolean isDefault;
-
-    @Override
-    public String toString() {
-        return "ShippingAddress{" +
-                "username='" + username + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", shippingAddress='" + shippingAddress + '\'' +
-                ", iDefault=" + isDefault +
-                '}';
-    }
-
-    public ShippingAddress() {
-    }
-
-    public ShippingAddress(String username, String phoneNumber, String shippingAddress, boolean isDefault) {
-        this.username = username;
-        this.phoneNumber = phoneNumber;
-        this.shippingAddress = shippingAddress;
-        this.isDefault = isDefault;
-    }
 
     public String getUsername() {
         return username;
@@ -49,19 +31,47 @@ public class ShippingAddress implements Serializable{
         this.phoneNumber = phoneNumber;
     }
 
-    public String getShippingAddress() {
-        return shippingAddress;
+    public String getArea() {
+        return area;
     }
 
-    public void setAddress(String shippingAddress) {
-        this.shippingAddress = shippingAddress;
+    public void setArea(String area) {
+        this.area = area;
     }
 
-    public boolean isIsDefault() {
+    public String getDetailedAddress() {
+        return detailedAddress;
+    }
+
+    public void setDetailedAddress(String detailedAddress) {
+        this.detailedAddress = detailedAddress;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public boolean isDefault() {
         return isDefault;
     }
 
-    public void setIsDefault(boolean isDefault) {
+    public void setDefault(boolean aDefault) {
+        isDefault = aDefault;
+    }
+
+    public ShippingAddress() {
+    }
+
+    public ShippingAddress(String username, String phoneNumber, String area, String detailedAddress, String zipCode, boolean isDefault) {
+        this.username = username;
+        this.phoneNumber = phoneNumber;
+        this.area = area;
+        this.detailedAddress = detailedAddress;
+        this.zipCode = zipCode;
         this.isDefault = isDefault;
     }
 }

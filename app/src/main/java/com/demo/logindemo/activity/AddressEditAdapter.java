@@ -19,6 +19,7 @@ import butterknife.ButterKnife;
 
 /**
  * Created by fupengpeng on 2017/6/5 0005.
+ * 收货地址的适配器
  */
 
 public class AddressEditAdapter extends BaseAdapter {
@@ -55,19 +56,14 @@ public class AddressEditAdapter extends BaseAdapter {
 
             convertView = LayoutInflater.from(context).inflate(R.layout.item_place_of_receipt_manage, null);
             viewHolder = new ViewHolder(convertView);
-//            viewHolder.itemActivityAddressEditUsername = (TextView) convertView.findViewById(R.id.item_activity_address_edit_username);
-//            viewHolder.itemActivityAddressEditPhoneNumber = (TextView) convertView.findViewById(R.id.item_activity_address_edit_phone_number);
-//            viewHolder.itemActivityAddressEditShippingAddress = (TextView) convertView.findViewById(R.id.item_activity_address_edit_shipping_address);
-//            viewHolder.itemActivityAddressEditIsDefault = (CheckBox) convertView.findViewById(R.id.item_activity_address_edit_is_default);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         viewHolder.itemActivityAddressEditUsername.setText(shippingAddressList.get(position).getUsername());
         viewHolder.itemActivityAddressEditPhoneNumber.setText(shippingAddressList.get(position).getPhoneNumber());
-        viewHolder.itemActivityAddressEditShippingAddress.setText(shippingAddressList.get(position).getShippingAddress());
-        viewHolder.itemActivityAddressEditUsername.setText(shippingAddressList.get(position).getUsername());
-        viewHolder.itemActivityAddressEditIsDefault.setChecked(shippingAddressList.get(position).isIsDefault());
+        viewHolder.itemActivityAddressEditShippingAddress.setText(shippingAddressList.get(position).getArea()+" "+shippingAddressList.get(position).getDetailedAddress());
+        viewHolder.itemActivityAddressEditIsDefault.setChecked(shippingAddressList.get(position).isDefault());
 
         // 设置位置，获取点击的条目按钮
         viewHolder.itemActivityAddressEditEdit.setTag(position);
