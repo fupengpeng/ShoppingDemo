@@ -357,7 +357,7 @@ public class PersonActivity extends BaseActivity implements IPersonView {
                 break;
             case R.id.ll_activity_person_integral_shopping:
                 Log.e(TAG, "onViewClicked: "+"跳转至 积分商城" );
-                intent = new Intent(PersonActivity.this,IntegralActivity.class);
+                intent = new Intent(PersonActivity.this,IntegralShoppingMallActivity.class);
                 startActivity(intent);
                 break;
         }

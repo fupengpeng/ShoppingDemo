@@ -53,13 +53,17 @@
         <activity android:name=".activity.personcenter.impl.BargainActivity" />
         <activity android:name=".activity.personcenter.impl.GrouponActivity" />
         <activity android:name=".activity.personcenter.impl.WinningActivity" />
-        <activity android:name=".activity.personcenter.impl.IntegralActivity" />
+        <activity android:name=".activity.personcenter.impl.IntegralShoppingMallActivity" />
         <activity android:name=".activity.personcenter.impl.IntegralPersonActivity" />
         <activity android:name=".activity.personcenter.impl.WithdrawDepositActivity" />
         <activity android:name=".activity.personcenter.impl.OrderParticularsActivity" />
         <activity android:name=".activity.personcenter.impl.OrderTrackingActivity" />
         <activity android:name=".activity.personcenter.impl.CommodityParticularsActivity" />
-        <activity android:name=".activity.personcenter.impl.AlterationInsuranceActivity"></activity>
+        <activity android:name=".activity.personcenter.impl.AlterationInsuranceActivity" />
+        <activity android:name=".activity.personcenter.impl.IntegralSequenceActivity" />
+        <activity android:name=".activity.personcenter.impl.IntegralTaskActivity" />
+        <activity android:name=".activity.personcenter.impl.IntegralUseActivity" />
+        <activity android:name=".activity.personcenter.impl.IntegralParticularsActivity"></activity>
     </application>
 
 </manifest>

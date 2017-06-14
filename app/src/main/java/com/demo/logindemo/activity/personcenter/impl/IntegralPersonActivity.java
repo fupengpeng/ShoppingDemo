@@ -58,8 +58,8 @@ public class IntegralPersonActivity extends BaseActivity implements IIntegralPer
     /**
      * 小伙伴中的排名
      */
-    @BindView(R.id.tv_activity_integral_person_sequence)
-    TextView tvActivityIntegralPersonSequence;
+    @BindView(R.id.tv_activity_integral_person_ranking)
+    TextView tvActivityIntegralPersonRanking;
     /**
      * 积分榜
      */
@@ -73,7 +73,7 @@ public class IntegralPersonActivity extends BaseActivity implements IIntegralPer
     /**
      * 基础任务
      */
-    @BindView(R.id.ll_activity_integral_person_basis_task)
+    @BindView(R.id.ll_activity_integral_person_integral_task)
     LinearLayout llActivityIntegralPersonBasisTask;
     /**
      * 积分用途
@@ -86,6 +86,7 @@ public class IntegralPersonActivity extends BaseActivity implements IIntegralPer
     @BindView(R.id.ll_activity_integral_person_integral_particulars)
     LinearLayout llActivityIntegralPersonIntegralParticulars;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,7 +98,7 @@ public class IntegralPersonActivity extends BaseActivity implements IIntegralPer
             R.id.btn_activity_integral_person_member_center,
             R.id.ll_activity_integral_person_integral_sequence,
             R.id.ll_activity_integral_person_integral_shopping_mall,
-            R.id.ll_activity_integral_person_basis_task,
+            R.id.ll_activity_integral_person_integral_task,
             R.id.ll_activity_integral_person_integral_use,
             R.id.ll_activity_integral_person_integral_particulars})
     public void onViewClicked(View view) {
@@ -118,27 +119,31 @@ public class IntegralPersonActivity extends BaseActivity implements IIntegralPer
              * 跳转至积分榜界面
              */
             case R.id.ll_activity_integral_person_integral_sequence:
-
+                startActivity(IntegralSequenceActivity.class);
                 break;
             /**
              * 跳转至积分商城界面
              */
             case R.id.ll_activity_integral_person_integral_shopping_mall:
+                startActivity(IntegralShoppingMallActivity.class);
                 break;
             /**
              * 跳转至基础任务界面
              */
-            case R.id.ll_activity_integral_person_basis_task:
+            case R.id.ll_activity_integral_person_integral_task:
+                startActivity(IntegralTaskActivity.class);
                 break;
             /**
              * 跳转至积分用途介绍界面
              */
             case R.id.ll_activity_integral_person_integral_use:
+                startActivity(IntegralUseActivity.class);
                 break;
             /**
              * 跳转至积分明细界面
              */
             case R.id.ll_activity_integral_person_integral_particulars:
+                startActivity(IntegralParticularsActivity.class);
                 break;
         }
     }
