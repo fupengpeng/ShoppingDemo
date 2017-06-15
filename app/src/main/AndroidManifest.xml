@@ -35,6 +35,8 @@
             android:name=".activity.other.impl.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".activity.personcenter.impl.RegisterActivity" />
+
+
         <activity android:name=".activity.personcenter.impl.PersonActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -63,7 +65,8 @@
         <activity android:name=".activity.personcenter.impl.IntegralSequenceActivity" />
         <activity android:name=".activity.personcenter.impl.IntegralTaskActivity" />
         <activity android:name=".activity.personcenter.impl.IntegralUseActivity" />
-        <activity android:name=".activity.personcenter.impl.IntegralParticularsActivity"></activity>
+        <activity android:name=".activity.personcenter.impl.IntegralParticularsActivity" />
+        <activity android:name=".activity.personcenter.impl.IntegralShoppingMallOrderActivity"></activity>
     </application>
 
 </manifest>
