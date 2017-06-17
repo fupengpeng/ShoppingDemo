@@ -271,6 +271,8 @@ public class AddressEditActivity extends BaseActivity
                         AddressEditActivity.this,
                         "点击一键获取按钮",
                         Toast.LENGTH_SHORT).show();
+
+                startActivity(MapSelectAddressActivity.class);
                 break;
         }
     }

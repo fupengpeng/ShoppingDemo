@@ -31,11 +31,15 @@ dependencies {
     })
     compile files('libs/nohttp1.0.7.jar')
     compile project(':pulltorefresh')
+    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/httpmime-4.1.2.jar')
+    compile files('libs/IndoorscapeAlbumPlugin.jar')
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.jakewharton:butterknife:8.5.1'
     compile 'com.alibaba:fastjson:1.2.32'
     compile 'liji.library.dev:citypickerview:0.7.0'
     compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     apt 'com.jakewharton:butterknife-compiler:8.5.1'
 }
